@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	
+
+
+<title>A Simple Calculator</title>
+<style>
+   h1{
+     font-family: 'Inconsolata', monospace;
+	 color:blue;
+	 text-align: center;
+	 
+   }
+    * {
+        font-family: 'Inconsolata', monospace;
+        color: #555;
+    }
+    body {
+        background-color: #3fb399;
+    }
+    .container {
+        width: 320px;
+        background-color: white;
+        margin: 120px auto;
+    }
+    table {
+        width: 100%;
+        border-color: #f4f4f4;
+    }
+    td {
+        width: 25%;
+    }
+    button {
+        width: 100%;
+        height: 70px;
+        font-size: 24px;
+        background-color: white;
+        border: none;
+    }
+    #inputLabel {
+        height: 120px;
+        font-size: 40px;
+        vertical-align: bottom;
+        text-align: right;
+        padding-right: 16px;
+        background-color: #ececec;
+    }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color:cyan;">
+    <a class="navbar-brand" href="home.html">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+     
+    <li class="nav-item">
+        <a class="nav-link" href="localdishes.html">Local Dishes</a>
+    </li>
+      <li class="nav-item">
+        <a class="nav-link" href="historicalplaces.html">Historical Places</a>
+    </li>
+      <li class="nav-item">
+        <a class="nav-link" href="registration.html">Registration</a>
+    </li>
+	  
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="aboutme.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          More and More
+        </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="contactme.html">Contact Me</a>
+          <a class="dropdown-item" href="aboutme.html">About Me</a>
+          <a class="dropdown-item" href="usefullinks.html">Useful Links</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+</div>
+<h1>A Simple Calculator</h1>
+<div class="container">
+    <table border="1" cellspacing="0">
+        <tr>
+            <td colspan="4" id="inputLabel">0</td>
+        </tr>
+        <tr>
+            <td colspan="2"><button onclick="pushBtn(this);">AC</button></td>
+            <td><button onclick="pushBtn(this);">1/</button></td>
+            <td><button onclick="pushBtn(this);">/</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="pushBtn(this);">7</button></td>
+            <td><button onclick="pushBtn(this);">8</button></td>
+            <td><button onclick="pushBtn(this);">9</button></td>
+            <td><button onclick="pushBtn(this);">*</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="pushBtn(this);">4</button></td>
+            <td><button onclick="pushBtn(this);">5</button></td>
+            <td><button onclick="pushBtn(this);">6</button></td>
+            <td><button onclick="pushBtn(this);">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="pushBtn(this);">1</button></td>
+            <td><button onclick="pushBtn(this);">2</button></td>
+            <td><button onclick="pushBtn(this);">3</button></td>
+            <td><button onclick="pushBtn(this);">+</button></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button onclick="pushBtn(this);">0</button></td>
+            <td><button onclick="pushBtn(this);">.</button></td>
+            <td><button onclick="pushBtn(this);">=</button></td>
+        </tr>
+    </table>
+</div>
+ 
+<script>
+    var inputLabel = document.getElementById('inputLabel');
+     
+    function pushBtn(obj) {
+         
+        var pushed = obj.innerHTML;
+         
+        if (pushed == '=') {
+            // Calculate
+            inputLabel.innerHTML = eval(inputLabel.innerHTML);
+             
+        } else if (pushed == 'AC') {
+            // All Clear
+            inputLabel.innerHTML = '0';
+        
+             
+        } else {
+            if (inputLabel.innerHTML == '0') {
+                inputLabel.innerHTML = pushed;
+                 
+            } else {
+                inputLabel.innerHTML += pushed;
+                 
+            }
+        }
+    }
+</script>
+
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ 
+</body>
+</html>
